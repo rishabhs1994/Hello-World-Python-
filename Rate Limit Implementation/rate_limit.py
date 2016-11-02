@@ -29,7 +29,7 @@ class RateLimit(object):
 
     def on_over_limit(limit):
         send_simple_message()
-        #notify_pagerduty()
+        notify_pagerduty()
         return (jsonify({'data':'You hit the rate limit','error':'429'}),429)
 
     def ratelimit(self, limit, type, per=300, namee=None,send_x_headers=True, 
