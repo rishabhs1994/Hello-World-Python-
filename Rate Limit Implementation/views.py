@@ -71,7 +71,7 @@ def get_user(id):
 #Rate Limited on basis of IP Address.
 #curl -i -X GET -H "Content-Type: application/json" -d '{"username":"Rishabh","password":"Rishabh"}' http://localhost:5000/api/resource
 @app.route('/api/resource')
-@rate_limit_object.ratelimit(100, 1)
+@rate_limit_object.ratelimit(10, 1)
 @auth.login_required
 def get_resource():
     return jsonify({ 'data': 'Hello, %s!' % g.user.username })
@@ -81,7 +81,7 @@ def get_resource():
 @app.route('/home')
 @auth.login_required
 def getPlayers():
-    @rate_limit_object.ratelimit(100, 2, 300, g.user.username)
+    @rate_limit_object.ratelimit(10, 2, 300, g.user.username)
     def gag():
         return jsonify({'message':'You are visiting rate limiting content, %s' \
         %g.user.username})
