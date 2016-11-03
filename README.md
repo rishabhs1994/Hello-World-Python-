@@ -6,6 +6,10 @@ installs a safety system which can be relaxed to allow for greater flow, or tigh
 The main reason to implement Rate Limiting is to ensure that no single user dominates, ensure quality service and to make more
 profit.
 
+We can set a time duration in which a user can visit a url a certain number of times only. If he exceeds that count, he gets rate limited and is unable to view the content of url. After the time duration is complete, the rate limit gets lifted and he can again access the url.
+
+I have used Redis which is in memory database to implement the same. When I want to implement the rate limiting by each user, I pass the username as the key which is unique. When I want to implement rate limiting by the IP address, I pass the IP address instead.
+
 Steps to run the project:
   1. Download all the files in a folder.
   2. Navigate to that folder using a terminal.
@@ -17,3 +21,11 @@ Steps to run the project:
   5. You can also visit <http://localhost:5000/api/resource> which is Rate Limited on basis of IP Address.
   6. You can also visiti <http://localhost:5000/api/resource/1> any number of times as this is not Rate Limited.
   7. Also please change the API key in mailgun.py and pagerduty.py. Also change the from and to fields in mailgun.py. You can      generate the keys by registering on the respective website.
+
+**Technologies used:**
+ 1. Python
+ 2. Flask
+ 3. SqlAlchemy
+ 4. Pagerduty
+ 5. Mailgun
+
