@@ -10,6 +10,12 @@ We can set a time duration in which a user can visit a url a certain number of t
 
 I have used Redis which is in memory database to implement the same. When I want to implement the rate limiting by each user, I pass the username as the key which is unique. When I want to implement rate limiting by the IP address, I pass the IP address instead.
 
+** USER TABLE **
+
+  Username  : String
+  Id  : Int, primary key
+  Password_hash : String
+
 Steps to run the project:
   1. Download all the files in a folder.
   2. Navigate to that folder using a terminal.
