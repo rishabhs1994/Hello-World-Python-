@@ -10,6 +10,13 @@ We can set a time duration in which a user can visit a url a certain number of t
 
 I have used Redis which is in memory database to implement the same. When I want to implement the rate limiting by each user, I pass the username as the key which is unique. When I want to implement rate limiting by the IP address, I pass the IP address instead.
 
+**Link**
+<http://52.15.140.132:5000/home>
+
+To register a user use the following command from the terminal
+curl -i -X POST -H "Content-Type: application/json" -d '{"username":"ABC","password":"ABC"}' http://52.15.140.132:5000/users
+
+
 **USER TABLE**
   
   Name | Type
